@@ -52,6 +52,16 @@ struct HotkeyBehaviorHarness {
             .confirmPaste,
             "hold press confirms review"
         )
+        try expect(
+            DictationHotkeyPolicy.action(mode: .hold, state: .recording, event: .escape),
+            .cancelRecording,
+            "escape cancels active recording"
+        )
+        try expect(
+            DictationHotkeyPolicy.action(mode: .toggle, state: .idle, event: .escape),
+            .none,
+            "escape outside recording is ignored"
+        )
 
         print("Hotkey behavior harness passed")
     }
