@@ -17,6 +17,8 @@ enum RecordingShortcutMode: String, Codable, CaseIterable, Identifiable {
 enum DictationHotkeyEvent {
     case pressed
     case released
+    case standalonePressed
+    case standaloneReleased
     case escape
     case cancel
 }
